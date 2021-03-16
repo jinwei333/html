@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas1" width="300" height="300" style="border: 1px solid"></canvas>
+    <canvas id="canvas2" width="300" height="300" style="border: 1px solid"></canvas>
+    <canvas id="canvas3" width="300" height="300" style="border: 1px solid"></canvas>
+    <canvas id="canvas4" width="300" height="300" style="border: 1px solid"></canvas>
+    <canvas id="canvas5" width="300" height="300" style="border: 1px solid"></canvas>
+    <canvas id="canvas6" width="300" height="300" style="border: 1px solid"></canvas>
+    <canvas id="canvas7" width="300" height="300" style="border: 1px solid"></canvas>
+    <canvas id="canvas8" width="300" height="300" style="border: 1px solid"></canvas>
+    <canvas id="canvas9" width="300" height="300" style="border: 1px solid"></canvas>
+    <canvas id="canvas10" width="300" height="300" style="border: 1px solid"></canvas>
+    <canvas id="canvas11" width="300" height="300" style="border: 1px solid"></canvas>
+    <canvas id="canvas12" width="300" height="300" style="border: 1px solid"></canvas>
+    <canvas id="canvas13" width="300" height="300" style="border: 1px solid"></canvas>
+    <script>
+        function composite(id, operation) {
+            var canvas = document.getElementById(id);
+            var ctx = canvas.getContext("2d");
+            ctx.fillStyle = "blue";
+            ctx.fillRect(0, 0, 200, 200);
+            ctx.globalCompositeOperation = operation;
+            ctx.fillStyle = "red";
+            ctx.fillRect(100, 100, 200, 200);
+        }
+        composite("canvas1", "source-over");
+        composite("canvas2", "source-in");
+        composite("canvas3", "source-out");
+        composite("canvas4", "source-atop");
+        composite("canvas5", "destination-over");
+        composite("canvas6", "destination-in");
+        composite("canvas7", "destination-out");
+        composite("canvas8", "destination-atop");
+        composite("canvas9", "lighter");
+        composite("canvas10", "darken");
+        composite("canvas11", "lighten");
+        composite("canvas12", "xor");
+        composite("canvas13", "copy");
+    </script>
+
+</body>
+</html>

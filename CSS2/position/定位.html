@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 20%;
+            height: 50px;
+            margin: 10px 10px 10px 50px;
+            padding: 5px;
+            border: 1px solid blue;
+            font-size: 16px;
+        }
+        div.static {
+            position: static;       /* static 没有定位，遵循正常的文档流对象 */
+        }
+
+        div.fixed {
+            position: fixed;
+            top: 30px;
+            right: 5px;
+        }
+
+        div.relative {
+            position: relative;
+            left: -20px;
+        }
+        div.absolute {
+            position: absolute;
+            left: 400px;
+            top: 50px;
+        }
+        div.sticky {
+            position: sticky;
+            top: 0;
+        }
+
+        img {
+            position: absolute;
+            left: 0px;
+            top: 240px;
+            clip:rect(0px, 400px, 200px, 0px);
+            z-index: -1;
+        }
+
+        div.overflow {
+            width: 100px;
+            height: 100px;
+            overflow: auto;
+        }
+
+        div.visible {
+            width: 100px;
+            height: 100px;
+            overflow: visible;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="static">static 正常位置</div>
+    <div class="fixed">fixed</div>
+
+    <div class="relative">relative 相对于正常位置向左偏移20px</div>
+    <div class="absolute">absolute 绝对位置 400px 50px</div>
+    <div class="sticky">sticky 粘贴位置</div>
+
+    <h1>This is a heading</h1>
+    <img src="img/bkg.jpg" width="650" height="325" alt="background"/>
+    <p>显示图片显示图片显示图片</p>
+
+    <div class="overflow">菜鸟教程 -- 学的不仅是技术，更是梦想！！！菜鸟教程 -- 学的不仅是技术，更是梦想！！！菜鸟教程
+        -- 学的不仅是技术，更是梦想！！！菜鸟教程 -- 学的不仅是技术，更是梦想！！！</div>
+
+    <div class="visible">菜鸟教程 -- 学的不仅是技术，更是梦想！！！菜鸟教程 -- 学的不仅是技术，更是梦想！！！菜鸟教程
+        -- 学的不仅是技术，更是梦想！！！菜鸟教程 -- 学的不仅是技术，更是梦想！！！</div>
+
+    <div style="height: 1000px">
+        用于产生scroll bar</div>
+
+</body>
+</html>

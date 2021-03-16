@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		
+		<style type="text/css">
+			.box {
+				width: 100px;
+				height: 100px;
+				border: 1px solid blue;
+				background: red;
+				margin: 100px;
+			}
+			@keyframes dv0change{
+				from{background-color: #0000FF;}
+				to{background-color: #FF0000;}
+			}
+			.dv0 {
+				animation: dv0change  5s;
+			}
+			/* 所有动画属性的简写属性。 */
+			@keyframes dv1change
+			{
+			    0%   {background: red; left:0px; top:0px;}
+			    25%  {background: yellow; left:200px; top:0px;}
+			    50%  {background: blue; left:200px; top:200px;}
+			    75%  {background: green; left:0px; top:200px;}
+			    100% {background: red; left:0px; top:0px;}
+			}
+			.dv1 {
+				position: relative;
+				animation: dv1change  5s;
+				animation-iteration-count: 2;	/* 动画播放次数 */
+				animation-direction: alternate; 
+			}
+			
+			@keyframes dv2circle{
+				100% {
+					transform:rotate(360deg);
+				}
+			}
+			.dv2 {
+				width: 100px;
+				height: 100px;
+				background-color: aqua;
+				/* border-radius: 50%; */
+				animation: dv2circle 10s infinite linear;
+				transform-origin: 200%  0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box dv0">
+		</div>
+
+		<div class="box dv1">
+		</div>
+		
+		<div class="box dv2">
+			
+		</div>
+	</body>
+</html>

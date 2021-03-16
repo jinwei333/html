@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>改变HTML内容</title>
+	<script type="text/javascript">
+		function changeBtnContent() {
+			var x = document.getElementById("btn");
+			x.innerHTML = "我已经改变";
+		}
+		
+		function changeBtnColor() {
+			var x = document.getElementById("btn2");
+			x.style.color = "blue"
+		}
+	</script>
+</head>
+<body>
+	<button type="button" id="btn" onclick="changeBtnContent()">点我改变内容</button>
+	<button type="button" id="btn2" onclick="changeBtnColor()">点我改变颜色</button>
+</body>
+</html>

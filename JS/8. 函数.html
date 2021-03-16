@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+		function checkboxOperate(objname, opt) {
+			var objlist = document.getElementsByName(objname);
+			
+			if(null != objlist) {
+				for(var i = 0; i < objlist.length; i++) {
+					if(objlist[i].checked == true) {
+						if(opt != "checkall") {
+							objlist[i].checked = false;
+						}
+					}
+					else {
+						if(opt != "uncheckall") {
+							objlist[i].checked = true;
+						}
+					}
+				}
+				
+			}
+		}
+	</script>
+</head>
+<body>
+	Apple<input type="checkbox" name="checkbox" id="checkbox" value="1" />
+	Orange<input type="checkbox" name="checkbox" id="checkbox" value="2" />
+	Banana<input type="checkbox" name="checkbox" id="checkbox" value="3" />
+	Par<input type="checkbox" name="checkbox" id="checkbox" value="4" />
+	
+	<button onclick="checkboxOperate('checkbox', 'checkall')">全选</button>
+	<button onclick="checkboxOperate('checkbox', 'uncheckall')">取消全选</button>
+	<button onclick="checkboxOperate('checkbox', 'reverseCheck')">反选</button>
+</body>
+</html>

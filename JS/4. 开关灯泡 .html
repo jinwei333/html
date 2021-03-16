@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+		function changeBulbState() {
+			var elem = document.getElementById("bulb");
+			
+			/* 检索 src 属性的值有没有包含 blubon 这个字符串 */
+			if(elem.src.match("bulbon")) {
+				elem.src = "img/bulboff.gif";
+			}
+			else {
+				elem.src = "img/bulbon.gif";
+			}
+		}
+	</script>
+</head>
+<body>
+	<img src="img/bulboff.gif" id="bulb" onclick="changeBulbState()" width="100px">
+</body>
+</html>

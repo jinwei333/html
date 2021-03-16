@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+		function objDisplay() {
+			var person = {name:"小明", sex: "男", age: 30};
+			// alert(person.name);
+			alert(person["name"]);
+		}
+		
+		function objCreate() {
+			var person = new Object();
+			
+			person.name = "小明";
+			person.age = 30;
+			person.sex = "男";
+			person.full = function() {
+				return this.name + " " + this.sex + " " + this.age;
+			}
+			//alert(person);
+			//alert(person.full);	// 不加() 显示对象方法的定义
+			console.log(person);
+			console.log(person.full);
+			
+			alert(person.full());
+		}
+	</script>
+</head>
+<body>
+	<p>点击按钮显示对象属性值：</p>
+	<button type="button" onclick="objDisplay()">Button1</button>
+	
+	<p>点击按钮显示对象方法的返回值：</p>
+	<button type="button" onclick="objCreate()">Button2</button>
+</body>
+</html>

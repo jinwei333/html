@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		.dv1 {
+			width: 11em;
+			border: 1px solid #333333;
+			word-wrap: break-word;
+		}
+		
+		.dv2 {
+			width: 11em;
+			border: 1px solid #333333;
+			word-wrap: normal;
+		}
+		
+		.dv3 {
+			width: 11em;
+			border: 1px solid #333333;
+			word-break: break-all;
+		}
+	</style>
+</head>
+<body>
+	<div class="dv1">
+		This paragraph contains a very long word: thisisaveryveryveryveryveryverylongword.
+		The long word will break and wrap to the next line.
+	</div>
+	
+	<div class="dv2">
+		This paragraph contains a very long word: thisisaveryveryveryveryveryverylongword.
+		The long word will break and wrap to the next line.
+	</div>
+	
+	<div class="dv3">
+		This paragraph contains a very long word: thisisaveryveryveryveryveryverylongword.
+		The long word will break and wrap to the next line.
+	</div>
+</body>
+</html>

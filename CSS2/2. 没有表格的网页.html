@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			* {
+				/*https://developer.mozilla.org/zh-CN/docs/Web/CSS/box-sizing*/
+				box-sizing: border-box;
+			}
+			body {
+				margin: 10px;
+			}
+			.topmenu {
+				list-style-type: none;
+				font-size: 18px;
+				background-color: darkcyan;
+				overflow: hidden;
+				padding: 0;
+				margin: 0;
+			}
+			.topmenu li {
+				float: left;
+			}
+			
+			.topmenu li a {
+				display: inline-block;
+				color: white;
+				padding: 16px;
+				margin: 8px;
+				text-align: center;
+				text-decoration: none;
+			}
+			.topmenu li a:hover {
+				background-color:  black;
+			}
+			.topmenu li a.active {
+				color: black;
+				background-color: blanchedalmond;
+			}
+			
+			.clearfix::after {
+				content: "";
+				clear: both;
+			}
+			
+			.column {
+				float: left;
+				padding: 20px;
+			}
+			
+			.sidemenu {
+				width: 25%;
+			}
+			.content {
+				width: 75%;
+			}
+			
+			.sidemenu ul {
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+			}
+			.sidemenu li a {
+				display: block;
+				text-decoration: none;
+				padding: 8px;
+				background-color: burlywood;
+				color: black;
+				margin-bottom: 4px;
+			}
+			.sidemenu li a:hover {
+				color: white;
+				background-color: black;
+			}
+			.sidemenu li a.active {
+				color: red;
+			}
+			
+			.clearfix {
+				content: none;
+				clear: both;
+				display: table;
+			}
+			
+			.header {
+				color: white;
+				background-color: cornflowerblue;
+				text-align: center;
+				padding: 15px;
+			}
+
+			.footer {
+				background-color: #444;
+				color: white;
+				padding: 15px;
+			}
+			
+			
+		</style>
+</head>
+<body>
+<ul class="topmenu">
+	<li><a class="active" href="#home">主页</a></li>
+	<li><a href="#news">新闻</a></li>
+	<li><a href="#contact">联系我们</a></li>
+	<li><a href="#about">关于我们</a></li>
+</ul>
+
+<div class="clearfix">
+	<div class="column sidemenu">
+		<ul>
+			<li><a href="#flight" class="active">The Flight</a></li>
+			<li><a href="#island">The Island</a></li>
+			<li><a href="#food">The Food</a></li>
+			<li><a href="#people">The People</a></li>
+			<li><a href="#history">The History</a></li>
+			<li><a href="#oceans">The Oceans</a></li>
+		</ul>
+	</div>
+	<div class="column content">
+		<h1 class="header">The City</h1>
+		<h1>Chania</h1>
+		<p>Chania is the capital of the Chania region on the island of Crete. The city can be divided in two parts, the old town and the modern city.</p>
+		<p>You will learn more about responsive web pages in a later chapter.</p>
+		
+	</div>
+</div>
+
+<div class="footmenu">
+	<p class="footer">底部文本</p>
+</div>
+</body>
+</html>

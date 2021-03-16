@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			function Person(name, age, sex) {
+				this.name = name;
+				this.age = age;
+				this.sex = sex;
+
+			}
+
+			Person.prototype.fullName = function() {
+				alert(this.name + "" + this.age + "" + this.sex);
+			}
+			
+			var per = new Person("Joins", 28, "male");
+			
+			// 实际上是执行了 per.toString()
+			// console.log(per);
+			
+			Person.prototype.toString = function() {
+				alert("hello");
+				return "我是一个快乐的person"; 
+			}
+			console.log(per);
+		</script>
+	</head>
+	<body>
+
+
+
+	</body>
+</html>

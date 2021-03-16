@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			function Person(name, age, sex) {
+				this.name = name;
+				this.age = age;
+				this.sex = sex;
+				/* this.fullName = function () {
+					alert(this.name + " " + this.age + " " + this.sex);
+				} */
+			}
+			/*
+				我们创建的每一个函数，解析器都会向函数中添加一个属性 prototype
+				这个属性对应着一个对象，这个对象就是我们所谓的原型对象。
+				
+				如果函数作为普通函数调用prototype，没有任何左右
+				作为构造函数调用时，它所创建的对象中都有一个隐含属性，指向构造函数
+					的原型对象，可以通过 __proto__ 来访问该属性。
+			
+			*/
+		   function func() {
+			   
+		   }
+		   console.log(func.__proto__);	//Object
+		   
+			/* 
+				原型对象相当于一个公共区域，所有同一个类的实例都可以访问到这个区域
+				我们可以将所有对象的公共操作，统一设置到这个原型对象中。
+			 */
+			/* 原型对象中添加一个方法 */
+			Person.prototype.fullName = function() {
+				alert(this.name + " " + this.age + " " + this.sex);
+			}
+
+			/* 
+				当访问对象的属性或方法时，先在对象自身中寻找，若有就直接使用，
+				否则会去原型对象中寻找。
+			 */
+			var person1 = new Person("Alice", 19, "felme");
+			
+			console.log(person1.__proto__ == Person.prototype);	// true
+			person1.fullName();
+			
+			Person.prototype.discribe = "这是创建任务属性的类";
+			
+			/* 使用in检查对象是否含有某个属时性，原型对象也包含在内 */
+			console.log("discribe" in person1);	// true
+			
+			/* 检查对象自身是否含有某个属性 */
+			console.log(person1.hasOwnProperty("discribe"));	// false
+			
+			/* 查找属性时会一层一层往上找，直到找到 Object 对象为止
+				Object 对象的 __proto__为 null
+				如果 Object 还没找到则会返回 undefined
+			 */
+			console.log(person1.__proto__.__proto__);	// 原型对象的原型对象 Object
+			
+			/* 原型对象的原型对象的原型对象
+				null 时 Object 的 __proto__
+			*/
+			console.log(person1.__proto__.__proto__.__proto__);	// null
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

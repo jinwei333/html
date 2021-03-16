@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>边框样式演示</title>
+</head>
+    <style>
+        p {
+            width: 30%;
+            border-width: 2px;
+            border-color: darkgray;
+        }
+        #none {border-style: none;}
+        #dotted {border-style: dotted}
+        #dashed {border-style: dashed}
+        #solid {border-style: solid}
+        #double {border-style: double}
+        #groove {border-style: groove}
+        #ridge {border-style: ridge}
+        #insert {border-style: inset}
+        #outset {border-style: outset}
+
+        #much {
+            border-top-style: dashed;
+            border-bottom-style: dashed;
+            border-left-style: solid;
+            border-right-style: double;
+            border-left-width: 4px;
+            border-left-color: red;
+        }
+
+        /*
+            border-style：属性1，属性2，属性3，属性4
+            上->右->下->左
+            border-style：属性1，属性2，属性3
+            上->左右->下
+            border-style：属性1，属性2
+            上下->左右
+            border-style：属性1
+            上下左右属性相同
+        */
+        #simple_much {
+            border-style: dashed double dashed solid;   /*上右下左*/
+        }
+
+        #simple_border {
+            -webkit-writing-mode: vertical-rl;
+            writing-mode: tb-rl;
+            width: 50%;
+            border: 3px dashed pink;
+        }
+    </style>
+<body>
+<p id="none">无边框（none）</p>
+<p id="dotted">点线边框（dotted）</p>
+<p id="dashed">虚线边框（dashed）</p>
+<p id="solid">实线边框（solid）</p>
+<p id="double">双边框（double）</p>
+<p id="groove">3D沟槽边框（groove）</p>
+<p id="ridge">3D脊边框（ridge）</p>
+<p id="insert">3D嵌入边框(insert)</p>
+<p id="outset">3D突出边框(outset)</p>
+<p id="much">多种样式的边框</p>
+<p id="simple_much">简写边框样式</p>
+<p id="simple_border">简写边框属性</p>
+</body>
+</html>

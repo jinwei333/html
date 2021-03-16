@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+	
+		.dropdown {
+			position: relative;
+			display: inline-block;
+		}
+	
+		.dropbtn {
+			width: 100%;
+			padding: 8px;
+			border: none;
+			font-size: 16px;
+			cursor: pointer;
+		}
+		
+		.dropdown-content {
+			display: none;
+			position: absolute;
+			min-width: 160px;
+			background-color: #D3D3D3;
+			box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+			right: 0;	/* 下拉框在按钮左边显示 */
+		}
+		
+		.dropdown-content a {
+			display: block;
+			text-decoration: none;
+			color: black;
+			padding: 8px;
+			font: 16px "microsoft yahei";
+		}
+		.dropdown-content a:hover {
+			font-weight: bold;
+		}
+		
+		.dropdown:hover .dropbtn {
+			background-color: #6495ED;
+		}
+		
+		.dropdown:hover .dropdown-content {
+			display: block;	/* Display on by block */
+		}
+		
+	</style>
+</head>
+<body>
+	点击这个按钮:
+	<div class="dropdown">
+		<button class="dropbtn">下拉菜单</button>
+		<div class="dropdown-content">
+			<a href="#">选项1</a>
+			<a href="#">选项2</a>
+			<a href="#">选项3</a>
+		</div>
+	</div>
+</body>
+</html>

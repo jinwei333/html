@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>导航栏演示</title>
+	
+	<style type="text/css">
+		.header {
+			width: 100%;
+			list-style-type: none;
+			background-color: #F1F1F1;
+			overflow: auto; 
+			margin: 0px;
+			padding: 0px;
+		}
+		
+		.header li {
+			display: inline;
+		}
+		.header li a {
+			width: 60px;
+			font-size: 20px;
+			padding: 16px;
+			margin: 20px;
+			text-decoration: none;
+			text-align: center;
+		}
+		
+		.header li a.actived {
+			background-color: lightslategrey;
+			color: white;
+		}
+		/* 鼠标移动到选项上修改背景颜色 */
+		.header li a:hover:not(.actived) {
+			background-color: darkgray;
+			color: blue;
+			font-weight: bold;
+		}
+		
+		div.content {
+			padding: 2px 16px;
+			height: 100%;
+		}
+	</style>
+	
+</head>
+<body>
+	<ul class="header">
+		<li><a class="actived" href="#home">首页</a></li>
+		<li><a href="#news">新闻</a></li>
+		<li><a href="#contact">联系</a></li>
+		<li><a href="#about">关于</a></li>
+	</ul>
+
+	<div class="content">
+		<h1>Fixed Full-height Side Nav</h1>
+		<h2>Try to scroll this area, and see how the sidenav sticks to the page</h2>
+		<p>Some text..</p>
+			<p>Some text..</p>
+			<p>Some text..</p>
+			<p>Some text..</p>
+			<p>Some text..</p>
+			<p>Some text..</p>
+			<p>Some text..</p>
+			<p>Some text..</p>
+			<p>Some text..</p>
+			<p>Some text..</p>
+			<p>Some text..</p>
+			<p>Some text..</p>
+			<p>Some text..</p>
+			<p>Some text..</p>
+			<p>Some text..</p>
+			<p>Some text..</p>
+			<p>Some text..</p>
+			<p>Some text..</p>
+			<p>Some text..</p>
+			<p>Some text..</p>
+			<p>Some text..</p>
+			<p>Some text..</p>
+			<p>Some text..</p>
+			<p>Some text..</p>
+			<p>Some text..</p>
+	</div>
+</body>
+</html>

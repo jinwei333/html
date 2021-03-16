@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		.box {
+			width: 200px;
+			margin: 0 auto;
+			overflow: hidden;
+		}
+		div.nav {
+			width: 43px;
+			height: 44px;
+			margin-left: 10px;
+			float: left;
+			background: url(img/img_navsprites_hover.gif) no-repeat;
+		}
+		div.home {
+			background-position: 0 0;
+		}
+		div.next {
+			background-position: -47px 0;
+		}
+		div.last {
+			background-position: -91px 0;
+		}
+		.home:hover {
+			background-position: 0 -45px;
+		}
+		.next:hover {
+			background-position: -47px -45px;
+		}
+		.last:hover {
+			background-position: -91px -45px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="nav home">
+		</div>
+		<div class="nav next">
+		</div>
+		<div class="nav last">
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>表单</title>
+</head>
+<body>
+
+<div style="width: 300px;">
+	<form action="">
+		姓名: <input type="text" name="name"><br>
+		密码: <input type="password" name="password"><br><br>
+		记住密码：<input type="radio" name="radio" checked="true">A
+				  <input type="radio" name="radio">B <br><br>
+		<input type="checkbox" name="checkbox">记住密码<br>
+		<input type="submit" name="submit" value="Submit" style="background-color: black; color: white;float: right"><br>
+		<select>
+			<option value="apple">Apple</option>
+			<option value="banana">Banana</option>
+			<option value="cherry">Cherry</option>
+		</select>
+		<textarea rows="10" cols="30"></textarea><br><br>
+		<input type="button" name="btn" value="提交" style="float: right"><br><br>
+
+		<fieldset>
+			<legend>Personal info</legend>
+			Name:<input type="text" name="name1" size="30">
+			Password:<input type="password" name="password1" size="30"><br>
+		</fieldset>
+	</form>
+	
+	<form method="get">
+		<input type="browsers" name="browser">
+		<datalist id="browsers">
+			<option value="Internet Explore">
+			<option value="Chrome">
+			<option value="Opera">
+			<option value="Safari">
+		</datalist>
+		<input type="submit">
+	</form>
+</div>
+</body>
+</html>

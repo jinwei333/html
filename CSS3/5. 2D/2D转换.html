@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.box {
+				width: 320px;
+				height: 240px;
+				/* padding: 80px; */
+				margin-left: 100px;
+				margin-top: 100px;
+				color: white;
+				text-align: center;
+				background-color: #333333;
+				/* transform-origin: 0 0; */
+			}
+			.dv1 {
+				background-color: rgba(255, 0, 0, 0.8);
+				/* 在一个给定度数顺时针旋转的元素。负值是允许的，这样是元素逆时针旋转。 */
+				transform:rotate(30deg) ;
+				-ms-transform:rotate(30deg); /* IE 9 */
+				-webkit-transform:rotate(30deg); /* Safari and Chrome */ 
+			}
+			.dv2 {
+				background-color: #9198E5;
+				/* 根据左(X轴)和顶部(Y轴)位置给定的参数，从当前元素位置移动。 */
+				transform:translate(100px, 0);
+				-ms-transform:translate(100px, 0); /* IE 9 */
+				-webkit-transform:translate(100px, 0); /* Safari and Chrome */
+			}
+			.dv3 {
+				background: #8B0000;
+				transform:scale(0.5, 0.8);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box dv0">
+			origin
+		</div>
+		<div class="box dv1">
+			rotate
+		</div>
+
+		<div class="box dv2">
+			translate
+		</div>
+		
+		<div class="box dv3">
+			scale
+		</div>
+	</body>
+</html>

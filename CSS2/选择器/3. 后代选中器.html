@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		div span {	/* div 的后代 span，后代可以是儿子，孙子等 */
+			color: blue;
+		}
+		
+		div > p {	/* div 的亲儿子 */
+			background-color: #C0C0C0;
+		}
+	</style>
+</head>
+<body>
+	
+	<div>
+		<span>书山有路勤为径，学海无涯苦作舟</span>
+	</div>
+	<div>枯木逢春犹再发</div>	<!-- 不起作用 -->
+	<span>人无两度再少年</span>
+	
+	<br />
+	<br />
+	
+	<div>
+		<p>长江后浪推前浪，</p>
+		<span>
+			<p>世上今人胜古人。</p>
+		</span>
+	</div>
+	
+</body>
+</html>

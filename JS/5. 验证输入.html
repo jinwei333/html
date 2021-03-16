@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>验证输入是否是数字</title>
+	<script type="text/javascript">
+		function submit() {
+			var x = document.getElementById("numinput").value;
+			if(x=="") {
+				alert("输入为空！");
+			}
+			else if(isNaN(x)) {
+				alert("输入不全是数字！");
+			}
+		}
+	</script>
+</head>
+<body>
+	<p>请输入数字: </p>
+	<input type="text" name="numinput" id="numinput"/>
+	<button type="button" id="btn1" onclick="submit()">提交</button>
+</body>
+</html>

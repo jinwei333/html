@@ -1,0 +1,43 @@
+<!-- 目的是让child 在 parent2 偏移一段距离， -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		.parent1 {
+			width: 200px;
+			height: 200px;
+			background-color: red;
+		}
+		.parent2 {
+			width: 200px;
+			height: 200px;
+			background-color: blue;
+			/* 如果 relative 换成 absolute定位会脱离文本流，覆盖了 parent3 */
+			position: relative;
+		}
+		.parent3 {
+			width: 250px;
+			height: 250px;
+			background-color: green;
+		}
+		.child {
+			width: 50px;
+			height: 50px;
+			background-color: pink;
+			position: absolute;
+			top: 30px;
+			left: 30px;
+		}
+	</style>
+</head>
+<body>
+	<div class="parent1"></div>
+	<div class="parent2">
+		<div class="child">
+		</div>
+	</div>
+	<div class="parent3"></div>
+</body>
+</html>

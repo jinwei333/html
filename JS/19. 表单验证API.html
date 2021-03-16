@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			/* 默认错误消息提示 */
+			function formCheck1() {
+				var obj = document.getElementById("myinput1");
+				if(obj.checkValidity()==false) {
+					alert(obj.validationMessage);
+					return false;
+				}
+				else {
+					alert("输入正确");
+					return true;
+				}
+			}
+			
+			/* 约束验证 validity属性的应用 */
+			function formCheck2() {
+				var obj = document.getElementById("myinput2");
+
+				if(obj.validity.rangeOverflow) {
+					alert("formCheck: 输入值过大");
+				}
+				else if(obj.validity.rangeUnderflow) {
+					alert("formCheck: 输入值过小");
+				}
+				else if(obj.validity.tooLong) {
+					alert("formCheck: 输入过长");
+				}
+				else {
+					alert("formCheck: 输入正确");
+				}
+			}
+			
+			function formCheck3() {
+				var obj = document.getElementById("myinput3");
+				obj.setCustomValidity('');	// 取消自定义提示的方式
+				if(obj.checkValidity()==false) {
+					if(obj.value=="") {
+						obj.setCustomValidity("不能为空哦");
+					}
+					else if(obj.value>100 || obj.value<10) {
+						obj.setCustomValidity("错误，请重新输入(10~100之间)");
+					}
+				}
+				else {
+					obj.setCustomValidity("输入是正确哒");
+				}
+				alert(obj.validationMessage);
+			}
+		</script>
+	</head>
+	<body>
+		<p>输入数字并点击验证按钮，正确地范围为 10~100:</p>
+		<input type="number" id="myinput1" min="10" max="100"/>
+		<input type="button" onclick="formCheck1()" value="提交"/>
+		<br /><br />
+		
+		<p>输入数字并点击验证按钮，正确地范围为 10~100:</p>
+		<input type="number" id="myinput2" min="10" max="100" maxlength="3"/>
+		<input type="button" onclick="formCheck2()" value="提交"/>
+		<br /><br />
+		
+		<p>输入数字并点击验证按钮，正确地范围为 10~100:</p>
+		<input type="number" id="myinput3" min="10" max="100" />
+		<input type="button" onclick="formCheck3()" value="提交"/>
+	</body>
+</html>

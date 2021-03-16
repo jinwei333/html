@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>为按钮添加事件</title>
+	<script type="text/javascript">
+		function mousePressed() {
+			document.getElementById("btn").innerHTML = "Pressed";
+		}
+		
+		function mouseReleased() {
+			document.getElementById("btn").innerHTML = "Released";
+		}
+		
+		window.onload = function() {
+			var test = document.getElementById("btn");
+			
+			test.onmousedown = mousePressed;
+			test.onmouseup = mouseReleased;
+			
+			// test.addEventListener("mousedown", mousePressed);
+			// test.addEventListener("mouseup", mouseReleased);
+		}
+	</script>
+</head>
+<body>
+	<button type="button" id="btn">点我</button>
+</body>
+</html>

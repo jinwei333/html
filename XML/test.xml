@@ -1,0 +1,33 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE note [
+  <!ELEMENT note (to,from,heading,body)>
+  <!ELEMENT to      (#PCDATA)>
+  <!ELEMENT from    (#PCDATA)>
+  <!ELEMENT heading (#PCDATA)>
+  <!ELEMENT body    (#PCDATA)>
+]>
+
+<note>
+	<to>Love</to>
+	<from>King</from>
+	<heading>Reminder</heading>
+	<body>Don't forget me!</body>
+</note>
+
+<bookstore>
+	<book category="COOKING">
+		<title lang="en">Harry Potter</title>
+		<author>J K.Rowling</author>
+		<year>2005</year>
+		<price>29.99</price>
+	</book>
+
+	<book category="WEB">
+		<title lang="en">Learning &lt; XML</title>
+		<author>Erik T. Ray</author>
+		<year>2003</year>
+		<price>49.99</price>
+	</book>
+</bookstore>

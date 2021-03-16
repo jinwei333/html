@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		.dropdown-content {
+			display: none;
+			color: white;
+			background-color: #444444;
+			padding: 8px;
+			min-width: 160px;
+			position: absolute;	/* 绝对位置, 不影响其他元素位置 */
+		}
+		
+		.dropdown:hover .dropdown-content{
+			display: block;	/* display on */
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="dropdown">
+		<span>点我</span>
+		<div class="dropdown-content">
+			<p>百度的网址</p>
+			<p>www.baidu.com</p>
+		</div>
+		
+		<p>abcde</p>
+	</div>
+</body>
+</html>

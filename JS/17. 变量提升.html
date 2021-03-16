@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			"use strict";
+			var x = 5;
+			z = 15;
+			document.write("<p>x: " + x + " y: " + y + " z: " + z + "</p>");
+			var y = 10;	// 定义的变量不会提升，所以为 undefined
+			var z;	// 变量的声明，被提升
+			
+			function hositing() {
+				test1();	// 函数声明提升
+				function test1() {
+					alert("test1");
+				}
+				//test2();	// 报错，test2不是函数，而是一个以变量 test2 命名的函数
+				console.log(test2);	// 变量提升，输出 undefined
+				// 匿名函数
+				var test2 = function() {
+					alert("test2");
+				}
+				
+				var test3 = function() {
+					alert("test3");
+				}();	// 立即执行
+				
+				var test4 = 1024;
+				function test4() {
+					alert("test4");
+				}
+				//函数提升优先级高于变量提升，所以函数先提升，
+				// 然后变量提升覆盖之前的函数声明，表现为变量。
+				console.log(test4);
+				
+				//js中的变量搜索顺序：找变量时，先找局部变量，
+				// 如果没有局部变量；再找全局变量。
+				var test5 = "test5_1";
+				(function() {
+					console.log(test5);
+					var test5 = "test5_2";	// 局部变量提升
+				})();
+				
+			}
+		</script>
+	</head>
+	<body>
+		<p></p>
+		<button type="button" onclick="hositing()">点击测试变量提升</button>
+	</body>
+</html>

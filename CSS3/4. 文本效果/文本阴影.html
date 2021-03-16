@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				background-color: #000000;
+			}
+			.text {
+				font-size: 40px;
+				color: #000;
+				background: #333;
+				padding: 30px;
+				font-weight: bold;
+			}
+			.p1 {
+				
+				/* 阴影水平偏移值,
+				   阴影垂直偏移值,
+				   可选，阴影模糊值,
+				   阴影的颜色,
+				   */
+				  /* 描边*/
+				text-shadow: 1px 1px 0px #f96;
+			}
+			.p2 {
+				/* 内陷 */
+				text-shadow: 0 1px 1px #fff;
+			}
+			.p3 {
+				/* 辉光 */
+				text-shadow: 0px 0px 20px #fff;
+			}
+			.p4 {
+				/* 立体字特效 */
+				/* 多重阴影，向着同一个方向，进行叠加 */
+				text-shadow: 1px 1px rgba(197, 223, 248,0.8),
+							2px 2px rgba(197, 223, 248,0.8),
+							3px 3px rgba(197, 223, 248,0.8),
+							4px 4px rgba(197, 223, 248,0.8);
+			}
+		</style>
+	</head>
+	<body>
+		
+		<p class="text p1">描边特效</p>
+		<p class="text p2">内陷文本特效</p>
+		<p class="text p3">辉光特效</p>
+		<p class="text p4">立体字特效特效</p>
+	</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>类选择器和ID选择器</title>
+	
+	<style type="text/css">
+		.p1 {
+			color: red;
+		}
+		.p2 {
+			color: blue;
+			background-color: pink;
+		}
+		
+		#p3 {
+			color: white;
+			background-color: brown;
+		}
+		
+		div.news {
+			color: blueviolet;
+		}
+		
+		/*-- CSS 多类选择器  */
+		.important {
+			color: red;
+			font-style: normal;
+		}
+		.warning {
+			color: green;
+			font-style: italic;
+		
+		/* 通过把两个类选择器链接在一起，仅可以选择同时包含这些类名的元素（类名的顺序不限）*/
+		.important.warning {
+			font: bold 30px "microsoft yahei";
+			background: silver;
+		}
+	</style>
+	
+</head>
+<body>
+	<p class="p1">这是段落1，样式通过类选择器设置</p>
+	<p class="p2">这是段落2，样式通过类选择器设置</p>
+	<p id="p3">这是段落3，样式通过ID选择器设置</p>
+	
+	<div>DIV1</div>
+	<div class="news">DIV2</div>
+	
+	
+	<div class="important warning">
+		Attention!!!
+	</div>
+	<div class="warning">
+		This is warning!!!
+	</div>
+	<div class="important">
+		This is important!!!
+	</div>
+	
+</body>
+</html>

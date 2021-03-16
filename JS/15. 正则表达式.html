@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	
+</head>
+<body>
+	<span>检索字符串"hello world"中"or"的位置是：</span>
+	<span id="disp1"></span><br />
+	<script>
+		var s = "hello world!";
+		document.getElementById("disp1").innerHTML = s.search(/orl/i);
+	</script>
+	
+	<span>替换字符串"hello world"中"or"为"mn"：</span>
+	<span id="disp2"></span>
+	<script>
+		var s = "hello world!";
+		document.getElementById("disp2").innerHTML = s.replace(/orl/i, "mn");
+	</script>
+	
+	<span>检测"abcdef"中是否有 'g'</span>
+	<script>
+		var pattern = /g/;
+		pattern.test("abcdef").toString();
+	</script>
+</body>
+</html>

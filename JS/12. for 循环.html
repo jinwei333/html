@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>For循环</title>
+	<script type="text/javascript">
+		var arr = ["清明", "时节", "雨纷纷"];
+		
+		document.write("定义了数组: arr = \[" + arr + "\]");
+		
+		document.write("<h3>for(var i = 0; i < arr.length; i++)写法</h3>")
+		for(var i = 0; i < arr.length; i++) {
+			document.write(arr[i]);
+		}
+		
+		document.write("<h3>for(x in arr) 写法</h3>");
+		var x;
+		for(x in arr) {
+			document.write(arr[x]);
+		}
+		
+		document.write("<h3> for(x in arr)写法</h3>");
+		for(var i in arr) {
+			document.write(arr[i]);
+		}
+		
+		document.write(Date());
+		document.write(Number(new Date()));
+	</script>
+</head>
+<body>
+</body>
+</html>

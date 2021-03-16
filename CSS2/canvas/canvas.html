@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Canvas 演示</title>
+</head>
+<body>
+    <canvas id="canvas1" style="border: 1px solid" width="300" height="300">
+        你的浏览器不支持 canvas，请升级浏览器。	<!-- 如果不支持canvas，显示替换内容 -->
+    </canvas>
+
+    <canvas id="canvas2" width="300" height="300"></canvas>
+    <canvas id="canvas3" width="300" height="300" style="border: 1px solid"></canvas>
+    <canvas id="canvas4" width="300" height="300" style="border: 1px solid"></canvas>
+    <canvas id="canvas5" width="300" height="300" style="border: 1px solid"></canvas>
+    <canvas id="canvas6" width="300" height="300" style="border: 1px solid"></canvas>
+    <canvas id="canvas7" width="300" height="300" style="border: 1px solid"></canvas>
+    <canvas id="canvas8" width="300" height="300" style="border: 1px solid"></canvas>
+    <canvas id="canvas9" width="300" height="300" style="border: 1px solid"></canvas>
+    <canvas id="canvas10" width="300" height="300" style="border: 1px solid"></canvas><br>
+
+    <canvas id="canvas11" width="500" height="500" style="border: 1px solid"></canvas>
+    <img id="beauty_img" alt="美女图片" src="img/beauty.jpg" width="50" height="50">
+    <canvas id="canvas12" width="500" height="500" style="border: 1px solid"></canvas><br>
+    <canvas id="canvas13" width="300" height="300" style="border: 1px solid"></canvas>
+    <canvas id="canvas14" width="300" height="300" style="border: 1px solid"></canvas>
+    <canvas id="canvas15" width="300" height="300" style="border: 1px solid"></canvas>
+    <script>
+        var canvas = document.getElementById("canvas1");
+        var ctx = canvas.getContext("2d");	// 获取上下文对象
+        ctx.fillStyle = "rgba(200,0,0,0.4)";
+        ctx.fillRect(0,0,150,150);
+        ctx.fillRect(150,150,150,150);
+        ctx.fillStyle = "rgba(0,0,200,0.4)";
+        ctx.fillRect(150,0,150,150);
+        ctx.fillRect(0,150,150,150);
+        ctx.clearRect(130,130,40,40);
+
+
+        var canvas2 = document.getElementById("canvas2");
+        var ctx2 = canvas2.getContext("2d");
+        ctx2.strokeRect(0,0,150,150);	// 绘制矩形的边框
+        ctx2.strokeRect(0,150,150,150);	// 绘制矩形的边框
+        ctx2.strokeRect(150,0,150,150);	// 绘制矩形的边框
+        ctx2.strokeRect(150,150,150,150);	// 绘制矩形的边框
+
+        //绘制线段
+        var canvas3 = document.getElementById("canvas3");
+        var ctx3 = canvas3.getContext("2d");
+        ctx3.beginPath();
+        ctx3.moveTo(0,0);
+        ctx3.lineTo(300,300);
+        ctx3.closePath();
+        ctx3.stroke();	// 描边
+
+        // 绘制三角形
+        var canvas4 = document.getElementById("canvas4");
+        var ctx4 = canvas4.getContext("2d");
+        ctx4.beginPath();
+        ctx4.moveTo(10,10);
+        ctx4.lineTo(50,45);
+        ctx4.lineTo(40,80);
+        ctx4.closePath(); //虽然我们只绘制了两条线段，但是closePath会closePath，仍然是一个3角形
+        ctx4.stroke();	  // 描边
+
+        // 绘制实心三角形
+        ctx4.beginPath();
+        ctx4.moveTo(80,10);
+        ctx4.lineTo(120,45);
+        ctx4.lineTo(110,80);
+        ctx4.fill();
+
+        // arc(x, y, r, startAngle, endAngle, anticlockwise):
+        // 以(x, y) 为圆心，以r 为半径，从 startAngle 弧度开始到endAngle弧度结束。anticlosewise 是布尔值，true 表示逆时针，false 表示顺时针(默认是顺时针)。
+
+        // 绘制圆弧
+        ctx4.beginPath();
+        ctx4.arc(40,160,20,0,Math.PI*2/3,false);
+        ctx4.stroke();
+
+        ctx4.beginPath();
+        ctx4.arc(100,160,20,-Math.PI/2,0,false);
+        ctx4.stroke();
+
+        ctx4.beginPath();
+        ctx4.arc(160,160,20,-Math.PI/2,Math.PI/2,false);
+        ctx4.fill();
+
+        ctx4.beginPath();
+        ctx4.arc(220,160,20,0,Math.PI,false);
+        ctx4.fill();
+
+
+        // 贝塞尔曲线
+        var canvas5 = document.getElementById("canvas5");
+        var ctx5 = canvas5.getContext("2d");
+        var sx = 10, sy = 100;
+        var cp1x = 10, cp1y= 10;
+        var cp2x = 180, cp2y = 100;
+        ctx5.moveTo(sx,sy);
+        ctx5.lineTo(cp1x, cp1y);
+        ctx5.lineTo(cp2x, cp2y);
+        ctx5.closePath();
+        ctx5.stroke();
+
+        ctx5.beginPath();
+        ctx5.strokeStyle = "blue";
+        ctx5.moveTo(sx, sy);	//起始点
+        ctx5.quadraticCurveTo(cp1x, cp1y, cp2x, cp2y);
+        ctx5.stroke();
+
+        function fillStyle() {
+            var canvas = document.getElementById("canvas6");
+            if(!canvas.getContext)
+                return;
+            var ctx = canvas.getContext("2d");
+            for(var i = 0; i < 6; i++) {
+                for(var j = 0; j < 6; j++) {
+                    ctx.fillStyle = "rgb(" + Math.floor(255-42.5*i) + ","+Math.floor(255-42.5*j)+",0)";
+                    ctx.fillRect(j*50, i*50, 50, 50);
+                }
+            }
+        }
+        fillStyle();
+
+
+        function randomInt(from, to) {
+            return parseInt(Math.random()*(to-from+1)+from);
+        }
+        function stokeStyle() {
+            var canvas = document.getElementById("canvas7");
+            if(!canvas.getContext)
+                return;
+            var ctx = canvas.getContext("2d");
+            for(var i = 0; i < 6; i++) {
+                for(var j = 0; j < 6; j++) {
+                    ctx.strokeStyle = `rgb(${randomInt(0, 255)},${randomInt(0, 255)},${randomInt(0, 255)})`;
+                    ctx.strokeRect(j*50+5, i*50+5, 40, 40);
+                }
+            }
+        }
+        stokeStyle();
+
+        function lineStyle() {
+            var canvas = document.getElementById("canvas8");
+            if (!canvas.getContext)
+                return;
+            var ctx = canvas.getContext("2d");
+            ctx.beginPath();
+            ctx.moveTo(50, 30);
+            ctx.lineTo(200, 30);
+            ctx.lineWidth = 30; // 线宽。只能是正值。默认是 1.0。
+            // 线条末端样式。
+            // butt：线段末端以方形结束
+            // round：线段末端以圆形结束
+            // square：线段末端以方形结束，但是增加了一个宽度和线段相同，高度是线段厚度一半的矩形区域。
+            ctx.lineCap = "round";
+            ctx.stroke();
+        }
+        lineStyle();
+
+        function lineJoin() {
+            var canvas = document.getElementById("canvas8");
+            if (!canvas.getContext)
+                return;
+            var ctx = canvas.getContext("2d");
+
+            ctx.lineCap = "round";
+            ctx.lineWidth = 20;
+
+            var join = ["round", "bevel", "miter"];
+
+            for(var i = 0; i < 3; i++) {
+                ctx.beginPath();
+                ctx.moveTo(50, 100+i*50);
+                ctx.lineTo(100, 150+i*50);
+                ctx.lineTo(150, 100+i*50);
+                ctx.lineTo(200, 150+i*50);
+                ctx.lineTo(250, 100+i*50);
+                ctx.lineJoin = join[i];
+                ctx.stroke();
+            }
+        }
+        lineJoin();
+
+        // 绘制虚线
+        function lineDash() {
+            var canvas = document.getElementById("canvas9");
+            var ctx = canvas.getContext("2d");
+            ctx.setLineDash([8,2]); // [实线长度, 间隙长度]
+            ctx.lineDashOffset = -0; // 设置起始偏移量。
+            ctx.strokeRect(10, 10, 280, 280);
+        }
+        lineDash();
+
+        // 绘制文本
+        function drawText() {
+            var canvas = document.getElementById("canvas10");
+            var ctx = canvas.getContext("2d");
+            ctx.font = "50px sans-serif";
+            ctx.textAlign = "start";
+            ctx.direction = "ltr";
+            ctx.fillText("学习HTML", 0, 80, 300);     // (string, x, y, max_width)
+            ctx.strokeText("学习HTML", 0, 160, 300);
+
+        }
+        drawText();
+        
+        //绘制图片
+        function drawImage() {
+            var canvas = document.getElementById("canvas11");
+            var ctx = canvas.getContext("2d");
+            var image = new Image();
+            image.onload = function () {
+                ctx.drawImage(image, 0, 0, 500, 500);
+            };
+            image.src = "img/beauty.jpg";
+        }
+        drawImage();
+
+        function drawImage2() {
+            var canvas = document.getElementById("canvas12");
+            var ctx = canvas.getContext("2d");
+            var img = document.querySelector("img");
+            ctx.drawImage(img, 0, 0);
+        }
+        document.querySelector("img").onclick = function () {
+            drawImage2();
+        };
+
+        function translate() {
+            var canvas = document.getElementById("canvas13");
+            var ctx = canvas.getContext("2d");
+            ctx.save(); //保存坐原点平移之前的状态
+            ctx.translate(20, 20);
+            ctx.strokeRect(0, 0, 100, 100);
+            ctx.restore();  //恢复到最初状态
+            ctx.translate(150, 150);
+            ctx.fillRect(0, 0, 100, 100);
+        }
+        translate();
+
+        function rotate() {
+            var canvas = document.getElementById("canvas14");
+            var ctx = canvas.getContext("2d");
+            ctx.save();
+            ctx.fillStyle = "rgba(0, 255, 255, 1)";
+            ctx.translate(150, 150);
+            ctx.fillRect(0, 0, 100, 100);
+            ctx.fillStyle = "rgba(77, 77, 77, 0.5)";
+            ctx.rotate(Math.PI/180*30);
+            ctx.fillRect(0, 0, 100, 100);
+            ctx.fillStyle = "rgba(77, 77, 77, 0.2)";
+            ctx.rotate(Math.PI/180*30);
+            ctx.fillRect(0, 0, 100, 100);
+            ctx.restore();
+
+            ctx.save();
+            ctx.translate(0, 0);
+            ctx.fillRect(0, 0, 50, 50);
+            ctx.restore();
+        }
+        rotate();
+
+        function transform() {
+            var canvas = document.getElementById("canvas15");
+            var ctx = canvas.getContext("2d");
+            //ctx.fillRect(0, 0, 100, 100);
+            ctx.transform(1, 1, 0, 1, 0, 0);
+            ctx.fillRect(0, 0, 100, 100);
+        }
+        transform();
+    </script>
+</body>
+</html>

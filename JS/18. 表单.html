@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+		function validForm() {
+			var x = document.forms["myform"]["fname"].value;
+			if(x == null || x=="") {
+				alert("名字输入有误!");
+				return false;
+			}
+			else {
+				return true;
+			}
+		}
+	</script>
+</head>
+<body>
+	<form name="myform" action="https://www.runoob.com/try/demo_source/demo_form.php" onsubmit="return validForm()"  method="post">
+		请输入名字：
+		<input type="text" name="fname" id="username" required="required"/>
+		<br />
+		<br />
+		请输入密码：
+		<input type="password" name="pwd" id="pwd"/>
+		<br /><br />
+		<input type="submit" value="提交"/>
+	</form>
+</body>
+</html>

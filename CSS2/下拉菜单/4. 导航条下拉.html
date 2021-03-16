@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		
+		.table {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			background-color: #444;
+			/* overflow: hidden; */
+		}
+		
+		.table li {
+			float: left;
+		}
+		
+		.table li a, .dropbtn {
+			color: white;
+			display: inline-block;
+			text-align: center;
+			padding: 8px 16px;
+			text-decoration: none;
+		}
+		
+		.table li a:hover, .dropdown:hover {
+			background-color: #111;
+		}
+		
+		.dropdown {
+			display: inline-block;
+		}
+		
+		.dropdown-content {
+			display: none;
+			position: absolute;
+			min-width: 160px;
+		}
+		
+		.dropdown-content a{
+			display: block;
+			text-decoration: none;
+			padding: 10px;
+			color: brown;
+			font: 16px "microsoft yahei";
+		}
+		
+		.dropdown-content a:hover {
+			font-weight: bold;
+		}
+		
+		.dropdown:hover .dropdown-content {
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<ul class="table">
+		<li><a href="#head">首页</a> </li>
+		<li><a href="#news">资讯</a> </li>
+		<li><a href="#dyn">动态</a> </li>
+		
+		<div class="dropdown">
+			<a href="#rank" class="dropbtn">排行</a>
+			<div class="dropdown-content">
+				<a href="#">C++</a>
+				<a href="#">Java</a>
+				<a href="#">JavaScript</a>
+			</div>
+		</div>
+	</ul>
+	<div>hahahahahha</div>
+</body>
+</html>

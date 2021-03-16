@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	
+	<script type="text/javascript">
+		function btnClicked() {
+			var x = document.getElementById("input1").value;
+			var msg = "";
+			
+			debugger;
+			try{
+				if(x == "") throw "输入为空";
+				if(isNaN(x)) throw "输入值不是数字";
+				
+				x = Number(x);
+				if(x > 10)
+					throw "输入值大于10";
+				else if(x < 5)
+					throw "输入值小于5";
+					
+			}catch(e){
+				//TODO handle the exception
+				msg += "Error: " + e;
+				document.getElementById("display").innerHTML = msg;
+			}
+			finally {
+				/* finally 语句不论之前的 try 和 catch 中是否产生异常都会执行该代码块 */
+				alert(msg);
+			}
+		}
+	</script>
+	
+</head>
+<body>
+	<label for="input1">请输入5-10之间的数字：</label>
+	<input type="text" name="input1" id="input1" />
+	<input type="button" id="btn1" value="提交" onclick="btnClicked()"/>
+	<p id="display"></p>
+</body>
+</html>

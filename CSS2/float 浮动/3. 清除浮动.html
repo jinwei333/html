@@ -1,0 +1,58 @@
+<!-- http://www.imooc.com/learn/121 -->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.parent {
+				width: 800px;
+				border: 1px solid #0000FF;
+				margin: 10px;
+				/* 方式1 */
+				/* overflow: hidden; */
+				
+				/* 方式2 */
+				/* float: left; */
+			}
+			
+			.image1 {
+				width: 200px;
+				float: left;
+			}
+			
+			.text {
+				border: 1px solid red;
+			}
+			
+			/* 方式4： clearfix */
+			.clearfix {
+				content: '';
+				display: table;
+				clear: both;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div class="parent clearfix">
+			<img class="image1" src="../img/poetry.jpg">
+			<div class="text">
+				关关雎鸠，在河之洲。
+				窈窕淑女，君子好逑。<br />
+				参差荇菜，左右流之。
+				窈窕淑女，寤寐求之。<br />
+				求之不得，寤寐思服。
+				悠哉悠哉，辗转反侧。<br />
+				参差荇菜，左右采之。
+				窈窕淑女，琴瑟友之。<br />
+				参差荇菜，左右芼之。
+				窈窕淑女，钟鼓乐之。<br />
+			</div>
+		</div>
+		
+		<!-- <div style="clear: both;"></div> -->	 <!-- 方式3 -->	
+		<img class="img2" style="width: 200px;" src="../img/poetry.jpg">
+	</body>
+</html>

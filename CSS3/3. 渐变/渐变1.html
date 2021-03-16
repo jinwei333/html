@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		
+		.box {
+			color: white;
+			width: 320px;
+			height: 240px;
+			background-color: bisque;	/* 浏览器不支持时显示 */
+			float: left;
+			margin: 20px;
+			text-align: center;
+		}
+		.dv1 {
+			background-image: linear-gradient(#e66465, #9198e5);
+		}
+		.dv2 {
+			background-image: linear-gradient(to right, red, yellow);
+		}
+		.dv3 {
+			background-image: linear-gradient(to bottom right, red, blue);
+		}
+		
+		
+		.dv4 {
+			clear: both;
+			background-image: linear-gradient(0deg, red, blue);
+		}
+		.dv5 {
+			background-image: linear-gradient(90deg, red, blue);
+		}
+		.dv6 {
+			background-image: linear-gradient(225deg, red, blue);
+		}
+		
+		.dv7 {
+			clear: both;
+			background-image: linear-gradient(red, yellow, blue);
+		}
+		
+		.dv8 {
+			clear: both;
+			background-image: linear-gradient(90deg, rgba(0, 0, 255, 1), rgba(0, 0, 255, 0));
+		}
+	</style>
+</head>
+<body>
+	<p><strong>注意：</strong> Internet Explorer 9 及之前的版本不支持渐变。</p>
+	
+	<div class="box dv1">
+		线性渐变，默认从上倒下
+	</div>
+	<div class="box dv2">
+		从左到右
+	</div>
+	<div class="box dv3">
+		左上角到右下角
+	</div>
+
+	<div class="box dv4">
+		渐变角：0deg ==> 下->上
+	</div>
+	
+	<div class="box dv5">
+		渐变角：90deg ==> 左->右
+	</div>
+	<div class="box dv6">
+		渐变角：225deg ==> 右上->左下
+	</div>
+	
+	<div class="box dv7">
+		多色渐变
+	</div>
+	
+	<div class="box dv8">
+		使用透明度
+	</div>
+</body>
+</html>

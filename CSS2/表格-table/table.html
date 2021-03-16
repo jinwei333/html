@@ -1,0 +1,132 @@
+
+<!--
+
+	tr 标签——代表HTML表格中的一行		(table row)
+	td 标签——代表HTML表格中的一个单元格 (table data cell)
+
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>table演示</title>
+</head>
+<body>
+	<h4>水平标题的表格</h4>
+	<table border="1">	<!-- 边框属性 -->
+		<tr>
+			<th>h1</th>
+			<th>h2</th>
+			<th>h3</th>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>5</td>
+			<td>6</td>
+		</tr>
+	</table>
+
+	<h4>垂直标题的表格</h4>
+	<table border="1">
+		<caption>Form</caption>		<!-- 表格的标题 -->
+		<tr>
+			<th>Name</th>
+			<td>Jinwei</td>
+		</tr>
+
+		<tr>
+			<th>Tel:</th>
+			<td>18298225200</td>
+		</tr>
+	</table>
+
+	<h4>单元格标题，单元格边距，单元格间距演示</h4>
+	<table border="1", cellpadding="10" cellspacing="0">	<!--cellpadding：单元格边距 cellspacing：单元格间距-->
+		<caption>Form</caption>		<!-- 表格的标题 -->
+		<tr>
+			<th>Name</th>
+			<td>Jinwei</td>
+		</tr>
+
+		<tr>
+			<th>Tel:</th>
+			<td>18298225200</td>
+		</tr>
+	</table>
+
+	<h4>跨列的表格</h4>
+	<table border="1">
+		<tr>
+			<th>Name</th>
+			<th colspan="2">Telephone</th>
+		</tr>
+
+		<tr>
+			<td>Jinwei</td>
+			<td>13837615561</td>
+			<td>18298225200</td>
+		</tr>
+	</table>
+
+	<h4>跨行的表格</h4>
+	<table border="1">
+		<tr>
+			<th>Name</th>
+			<td>Jinwei</td>
+		</tr>
+
+		<tr>
+			<th rowspan="2">Telephone</th>	<!--rowspan 列跨越多行 -->
+			<td>13837615561</td>
+		</tr>
+
+		<tr>
+			<td>13837615561</td>
+		</tr>
+	</table>
+	
+	<h4>表格内的标签</h4>
+	<table border="1">
+		<tr>
+			<td>
+				<p>段落1</p>
+				<p>段落2</p>
+			</td>
+
+			<td>
+				<table>
+					<tr>
+						<td>A</td>
+						<td>B</td>
+					</tr>
+					<tr>
+						<td>C</td>
+						<td>D</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				单元格里面的列表
+				<ul>
+					<li>apples</li>
+					<li>bananas</li>
+					<li>oranges</li>
+				</ul>
+			</td>
+			<td>
+				Hello
+			</td>
+		</tr>
+	</table>
+
+</body>
+</html>
