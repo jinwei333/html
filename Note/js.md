@@ -109,11 +109,65 @@ null == undefined            // true
 
 
 
-### 数组
+### 数组 Array
+
+- 数组也是对象
+- 和普通对象不同的是数组使用索引操作属性
+- 数组的存储性能比普通对象好，所以开发中常用数组。
+- 读取不存在的索引，返回 undefined
+- 数组元素可以是任意数据类型
+
+`var arr = ["hello",  1, true, undefined, {name: "Jacket"}, {age: 18}];`
+
+```javascript
+var arr = new QArray();
+console.log(typeof arr);	// Object
+
+console.log(arr.length);	// 查询数组长度
+arr.length = 3;			// 设置数组长度
+
+/* 添加数据的好方法 */
+arr[arr.length] = 10;	// 向数组尾添加元素
+```
 
 数组的三种写法：
 
+```javascript
+new Array();
+new Array(size);
+new Array(element0, element1, ..., elementn);
+var arr = [element0, element1, ..., elementn];
+```
 
+## Array 对象方法
+
+| 方法                                                         | 描述                                                         |
+| :----------------------------------------------------------- | :----------------------------------------------------------- |
+| [concat()](https://www.w3school.com.cn/jsref/jsref_concat_array.asp) | 连接两个或更多的数组，并返回结果。                           |
+| [join()](https://www.w3school.com.cn/jsref/jsref_join.asp)   | 把数组的所有元素放入一个字符串。元素通过指定的分隔符进行分隔。 |
+| [pop()](https://www.w3school.com.cn/jsref/jsref_pop.asp)     | 删除并返回数组的最后一个元素                                 |
+| [push()](https://www.w3school.com.cn/jsref/jsref_push.asp)   | 向数组的末尾添加一个或更多元素，并返回新的长度。             |
+| [reverse()](https://www.w3school.com.cn/jsref/jsref_reverse.asp) | 颠倒数组中元素的顺序。                                       |
+| [shift()](https://www.w3school.com.cn/jsref/jsref_shift.asp) | 删除并返回数组的第一个元素                                   |
+| [slice()](https://www.w3school.com.cn/jsref/jsref_slice_array.asp) | 从某个已有的数组返回选定的元素。                             |
+| [sort()](https://www.w3school.com.cn/jsref/jsref_sort.asp)   | 对数组的元素进行排序                                         |
+| [splice()](https://www.w3school.com.cn/jsref/jsref_splice.asp) | 删除元素，并向数组添加新元素。                               |
+| [toSource()](https://www.w3school.com.cn/jsref/jsref_tosource_array.asp) | 返回该对象的源代码。                                         |
+| [toString()](https://www.w3school.com.cn/jsref/jsref_toString_array.asp) | 把数组转换为字符串，并返回结果。                             |
+| [toLocaleString()](https://www.w3school.com.cn/jsref/jsref_toLocaleString_array.asp) | 把数组转换为本地数组，并返回结果。                           |
+| [unshift()](https://www.w3school.com.cn/jsref/jsref_unshift.asp) | 向数组的开头添加一个或更多元素，并返回新的长度。             |
+| [valueOf()](https://www.w3school.com.cn/jsref/jsref_valueof_array.asp) | 返回数组对象的原始值                                         |
+
+forEach
+
+```javascript
+array.forEach(function(currentValue, index, arr), thisValue)
+```
+
+| 参数                                 | 描述                                                         |
+| :----------------------------------- | :----------------------------------------------------------- |
+| *function*(currentValue, index, arr) | currentValue*必需。当前元素;  index。当前元素的索引值。*arr可选。当前元素所属的数组对象。 |
+| *thisValue*                          | 可选。传递给函数的值一般用 "this" 值。 如果这个参数为空， "undefined" 会传递给 "this" 值 |
 
 ### 对象
 
